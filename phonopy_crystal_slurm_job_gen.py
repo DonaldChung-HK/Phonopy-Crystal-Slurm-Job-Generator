@@ -138,14 +138,14 @@ def gen_job(
 
 if __name__ == "__main__":
     ##Param
-    opt_in_file_name = "PlaceHolder"
+    opt_in_file_name = "exp.out"
     supercell = "2 2 2" 
     basis_set = "POB-TZVP"
     dft_mode = "PBE-D3"
     energy_tol_neg_exp = str(10)
     num_nodes = 6
     wall_time_string = "6:00:00"
-    system_name = "PlaceHolder"
+    system_name = "exp"
     kpoints = [3,2,3]
     woring_dir = Path(".")
     ###
