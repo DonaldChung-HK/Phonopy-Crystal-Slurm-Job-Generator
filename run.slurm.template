@@ -1,0 +1,20 @@
+#! /bin/bash -l
+#SBATCH -p scarf
+#SBATCH --job-name $job_name
+#SBATCH --nodes=$num_nodes
+#SBATCH --exclusive
+#SBATCH -C amd
+#SBATCH --time=$wall_timer
+
+module purge
+module load AMDmodules
+module load crystal23
+
+##### system dependent
+cp fort.34 fort.34.bak
+
+#####
+
+mpirun Pcrystal 2> >(tee $job_name.crys_out)
+
+cp $job_name.crys_out $result_dir/

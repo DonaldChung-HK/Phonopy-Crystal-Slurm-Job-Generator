@@ -1,0 +1,7 @@
+
+cd $run_dir
+pwd
+sbatch $slurm_file_name
+cd -
+pwd
+# it is very important to have the new line
