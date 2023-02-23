@@ -1,7 +1,7 @@
 #ignore the generated object
-run/*
-result/*
-generated_d12_bak/*
+run/
+result/
+generated_d12_bak/
 *.d12
 *.ext
 *.yaml
