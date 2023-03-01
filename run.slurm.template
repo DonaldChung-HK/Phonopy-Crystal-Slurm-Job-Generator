@@ -18,3 +18,6 @@ cp fort.34 fort.34.bak
 mpirun Pcrystal 2> >(tee $job_name.crys_out)
 
 cp $job_name.crys_out $result_dir/
+
+find . -name "diis*" -delete
+find . -name "fort*" -not -name "fort.34*" -delete
