@@ -69,7 +69,7 @@ def gen_job(
     #this get the number of run
     for file in file_list:
         if file.name.startswith('supercell-'): # don't name anything else with supercell in the working folder
-            pur = int(file.name[10:13]) #hoping that no changing the filename structure
+            pur = str(file.name[10:13]) #hoping that no changing the filename structure
             if pur not in pur_list:
                 pur_list.append(pur)
 
@@ -82,8 +82,8 @@ def gen_job(
         pur_path = run_path / str(pur)
         pur_path.mkdir(exist_ok=True)
         job_name = f"{system_name}_{pur}"
-        pur_name = f'{pur:03}'
-        file_INPUT = Path(f'supercell-{pur_name}.d12')
+        #pur_name = f'{pur:03}'
+        file_INPUT = Path(f'supercell-{pur}.d12')
         file_INPUT.rename(d12_generated_path / f"INPUT_{pur}")
 
         # Crystal INPUT file 
